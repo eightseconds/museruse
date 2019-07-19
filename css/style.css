@@ -1,0 +1,71 @@
+
+html {
+  font-size: 50%;
+  --background: black;
+  --key-outer: #F9B9B9;
+  --key-middle: #5DC9FF;
+  --key-inner: #FFFC66;
+}
+
+body {
+  font-family: "Arial";
+  overflow: hidden;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.game {
+  display: flex;
+  flex: calc(100% / 2);
+  flex-direction: column;
+  background: black;
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+
+.track-container {
+  display: flex;
+  border: 1px solid #FFFFFF;
+  flex: auto;
+}
+
+.key-container {
+  display: flex;
+  flex: 0 0 15%;
+}
+
+.key {
+  flex: calc(100% / 6);
+  border-left: 1px solid rgb(97, 96, 96);
+  display: flex;
+  justify-content: center;
+}
+
+.key--outer {
+  background: var(--key-outer);
+}
+
+.key--middle {
+  background: var(--key-middle);
+}
+
+.key--inner {
+  background: var(--key-inner);
+}
+
+.key--letter {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-size: 1.5rem;
+  padding-top: .5rem;
+}

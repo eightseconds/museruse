@@ -4,31 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="css/style.css" />
     <title>MuseRuse</title>
-    <style>
-        html {
-            background-color: black;
-        }
-        .container {
-            width: 420px;
-            height: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: white;
-        }
-        .content {
-            width: 420px;
-            height: 800px;
-        }
-        .track {
-            position: absolute;
-        }
-    </style>
+
 </head>
 <body>
-    <div class="container">
-        <canvas id="canvas" class="track" width="420" height="800"></canvas>
-    </div>
-    <script src="src/museruse.js"></script>
+    <main>
+        <div class="game">
+            <div class="track-container"></div>
+    
+            <div class="key-container">
+                <div class="key key--outer">
+                    <div class="key--letter">S</div>
+                </div>
+                <div class="key key--middle">
+                    <div class="key--letter">D</div>
+                </div>
+                <div class="key key--inner">
+                    <div class="key--letter">F</div>
+                </div>
+                <div class="key key--inner">
+                    <div class="key--letter">J</div>
+                </div>
+                <div class="key key--middle">
+                    <div class="key--letter">K</div>
+                </div>
+                <div class="key key--outer">
+                    <div class="key--letter">L</div>
+                </div>
+            </div>
+        </div>
+        <script src="src/script.js"></script>
 </body>
 </html>
