@@ -81,19 +81,44 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/museruse.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/entry.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/museruse.js":
-/*!*************************!*\
-  !*** ./src/museruse.js ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/entry.js":
+/*!**********************!*\
+  !*** ./src/entry.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const canvas = document.getElementById(\"canvas\")\nconst ctx = canvas.getContext(\"2d\")\n\nctx.fillStyle = \"#F9B9B9\";\nctx.fillRect(0, 675, 70, 125);\nctx.fillStyle = \"#F7A1A1\";\nctx.fillRect(0, 655, 70, 20);\nctx.font = \"30px, Arial\";\nctx.fillStyle = \"#000000\";\nctx.fillText('S', 30, 737.5);\n\nctx.fillStyle = \"#5DC9FF\";\nctx.fillRect(70, 675, 70, 125);\nctx.fillStyle = \"#1AB2FF\";\nctx.fillRect(70, 655, 70, 20);\nctx.font = \"30px, Arial\";\nctx.fillStyle = \"#000000\";\nctx.fillText('D', 100, 737.5);\n\nctx.fillStyle = \"#FFFC66\";\nctx.fillRect(140, 675, 70, 125);\nctx.fillStyle = \"#FFFB1A\";\nctx.fillRect(140, 655, 70, 20);\nctx.font = \"30px, Arial\";\nctx.fillStyle = \"#000000\";\nctx.fillText('F', 170, 737.5);\n\nctx.fillStyle = \"#FFFC66\";\nctx.fillRect(210, 675, 70, 125);\nctx.fillStyle = \"#FFFB1A\";\nctx.fillRect(210, 655, 70, 20);\nctx.font = \"30px, Arial\";\nctx.fillStyle = \"#000000\";\nctx.fillText('J', 240, 737.5);\n\nctx.fillStyle = \"#5DC9FF\";\nctx.fillRect(280, 675, 70, 125);\nctx.fillStyle = \"#1AB2FF\";\nctx.fillRect(280, 655, 70, 20);\nctx.font = \"30px, Arial\";\nctx.fillStyle = \"#000000\";\nctx.fillText('K', 315, 737.5);\n\nctx.fillStyle = \"#F9B9B9\";\nctx.fillRect(350, 675, 70, 125);\nctx.fillStyle = \"#F7A1A1\";\nctx.fillRect(350, 655, 70, 20);\nctx.font = \"30px, Arial\";\nctx.fillStyle = \"#000000\";\nctx.fillText('L', 385, 737.5);\n\n// const key = module.exports = new Event();\n\n// key.load = function() {\n\n\n    \n    window.addEventListener('keydown', function(e) {\n        // const act = maps.hit[e.keyCode];\n        // if (act && !state[act]) {\n        //     state[act] = true;\n        //     key.emit('hit, act, state');\n        // }\n        switch(e.keyCode) {\n            case 83:\n                ctx.fillStyle = \"#F37272\"\n                ctx.fillRect(0, 655, 70, 20);\n                break;\n            case 68:\n                ctx.fillStyle = \"#0088CC\"\n                ctx.fillRect(70, 655, 70, 20);\n                break;\n            case 70:\n                ctx.fillStyle = \"#FFCC00\"\n                ctx.fillRect(140, 655, 70, 20);\n                break;\n            case 74:\n                ctx.fillStyle = \"#FFCC00\"\n                ctx.fillRect(210, 655, 70, 20);\n                break;\n            case 75:\n                ctx.fillStyle = \"#0088CC\"\n                ctx.fillRect(280, 655, 70, 20);\n                break;\n            case 76:\n                ctx.fillStyle = \"#F37272\"\n                ctx.fillRect(350, 655, 70, 20);\n                break;\n        }\n    })\n\n    window.addEventListener('keyup', function(e) {\n        // const cmd = maps.command[e.keyCode];\n        // if (cmd) return key.emit(cmd);\n\n        // const act = maps.hit[e.keyCode];\n        // if (act) {\n        //     state[act] = false;\n        //     key.emit('hitup', act, state);\n        // }\n        switch (e.keyCode) {\n            case 83:\n                ctx.fillStyle = \"#F9B9B9\";\n                ctx.fillRect(0, 675, 70, 125);\n                ctx.fillStyle = \"#F7A1A1\";\n                ctx.fillRect(0, 655, 70, 20);\n                ctx.font = \"30px, Arial\";\n                ctx.fillStyle = \"#000000\";\n                ctx.fillText('S', 30, 737.5);\n                break;\n            case 68:\n                ctx.fillStyle = \"#5DC9FF\";\n                ctx.fillRect(70, 675, 70, 125);\n                ctx.fillStyle = \"#1AB2FF\";\n                ctx.fillRect(70, 655, 70, 20);\n                ctx.font = \"30px, Arial\";\n                ctx.fillStyle = \"#000000\";\n                ctx.fillText('D', 100, 737.5);\n                break;\n            case 70:\n                ctx.fillStyle = \"#FFFC66\";\n                ctx.fillRect(140, 675, 70, 125);\n                ctx.fillStyle = \"#FFFB1A\";\n                ctx.fillRect(140, 655, 70, 20);\n                ctx.font = \"30px, Arial\";\n                ctx.fillStyle = \"#000000\";\n                ctx.fillText('F', 170, 737.5);\n                break;\n            case 74:\n                ctx.fillStyle = \"#FFFC66\";\n                ctx.fillRect(210, 675, 70, 125);\n                ctx.fillStyle = \"#FFFB1A\";\n                ctx.fillRect(210, 655, 70, 20);\n                ctx.font = \"30px, Arial\";\n                ctx.fillStyle = \"#000000\";\n                ctx.fillText('J', 240, 737.5);\n                break;\n            case 75:\n                ctx.fillStyle = \"#5DC9FF\";\n                ctx.fillRect(280, 675, 70, 125);\n                ctx.fillStyle = \"#1AB2FF\";\n                ctx.fillRect(280, 655, 70, 20);\n                ctx.font = \"30px, Arial\";\n                ctx.fillStyle = \"#000000\";\n                ctx.fillText('K', 315, 737.5);\n                break;\n            case 76:\n                ctx.fillStyle = \"#F9B9B9\";\n                ctx.fillRect(350, 675, 70, 125);\n                ctx.fillStyle = \"#F7A1A1\";\n                ctx.fillRect(350, 655, 70, 20);\n                ctx.font = \"30px, Arial\";\n                ctx.fillStyle = \"#000000\";\n                ctx.fillText('L', 385, 737.5);\n                break;\n        }\n\n    });\n// };\n\n//# sourceURL=webpack:///./src/museruse.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game */ \"./src/game.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    let canvas = document.getElementById('canvas')\n    let context = canvas.getContext(\"2d\")\n    let game = new _game__WEBPACK_IMPORTED_MODULE_0__[\"default\"](canvas, context);\n    window.game = game;\n    \n    game.init();\n})\n\n//# sourceURL=webpack:///./src/entry.js?");
+
+/***/ }),
+
+/***/ "./src/game.js":
+/*!*********************!*\
+  !*** ./src/game.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _key__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./key */ \"./src/key.js\");\n\n\nconst KEYS = {\n    P: 80,\n    R: 82,\n    S: 83,\n    D: 68,\n    F: 70,\n    J: 74,\n    K: 75,\n    L: 76,\n}\n\nconst COLORS = {\n    RED: \"#F9B9B9\",\n    BLUE: \"#5DC9FF\",\n    YELLOW: \"#FFFC66\",\n}\n\nclass Game {\n    constructor(cvs, ctx) {\n        this.cvs = cvs;\n        this.ctx = ctx;\n    \n        this.keys = [];\n\n        this.init = this.init.bind(this);\n        this.loop = this.loop.bind(this);\n    }\n\n    init() {\n        const offset = 70;\n        this.keys.push(new _key__WEBPACK_IMPORTED_MODULE_0__[\"default\"](game, this.cvs.width / 2 - 70 * 3 , this.cvs.height - 120, COLORS['RED'], 'S'));\n        this.keys.push(new _key__WEBPACK_IMPORTED_MODULE_0__[\"default\"](game, this.cvs.width / 2 - 70 * 3 + offset, this.cvs.height - 120, COLORS['BLUE'], 'D'));\n        this.keys.push(new _key__WEBPACK_IMPORTED_MODULE_0__[\"default\"](game, this.cvs.width / 2 - 70 * 3 + (offset * 2), this.cvs.height - 120, COLORS['YELLOW'], 'F'));\n        this.keys.push(new _key__WEBPACK_IMPORTED_MODULE_0__[\"default\"](game, this.cvs.width / 2 - 70 * 3 + (offset * 3), this.cvs.height - 120, COLORS['YELLOW'], 'J'));\n        this.keys.push(new _key__WEBPACK_IMPORTED_MODULE_0__[\"default\"](game, this.cvs.width / 2 - 70 * 3 + (offset * 4), this.cvs.height - 120, COLORS['BLUE'], 'K'));\n        this.keys.push(new _key__WEBPACK_IMPORTED_MODULE_0__[\"default\"](game, this.cvs.width / 2 - 70 * 3 + (offset * 5), this.cvs.height - 120, COLORS['RED'], 'L'));\n        this.loop();\n        this.keys[0].trackInput();\n    }\n    \n    draw() {\n        this.keys.forEach(key => key.draw());    \n    }\n    \n    update(){\n        this.keys.forEach(key => key.update());    \n    }\n    \n    loop() {\n        this.update();\n        this.draw();\n        window.requestAnimationFrame(this.loop);\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Game);\n\n//# sourceURL=webpack:///./src/game.js?");
+
+/***/ }),
+
+/***/ "./src/key.js":
+/*!********************!*\
+  !*** ./src/key.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n\n\nclass Key {\n    constructor(game, x, y, color, letter) {\n        this.cvs = game.cvs;\n        this.ctx = game.ctx;\n \n        this.w = 70;\n        this.h = 120;\n        this.pos = {\n            x: x,\n            y: y,\n        }\n        this.color = color;\n        this.key = 0;\n        this.letter = letter;\n        this.trackInput = this.trackInput.bind(this);\n\n    }\n    \n    trackInput() {\n        document.addEventListener('keydown', (e) => {\n            \n        })\n    }\n\n    update() {\n\n    }\n\n    draw() {\n        this.ctx.fillStyle = '#b3b3b3';\n        this.ctx.fillRect(this.pos.x, this.pos.y - 10, this.w, 10)\n        this.ctx.fillStyle = this.color;\n        this.ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);\n        this.ctx.font = '15px Arial'\n        this.ctx.fillStyle = \"black\"\n        this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 60)\n    }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Key);\n\n//# sourceURL=webpack:///./src/key.js?");
 
 /***/ })
 

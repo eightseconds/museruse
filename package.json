@@ -2,7 +2,7 @@
   "name": "museruse",
   "version": "1.0.0",
   "description": "",
-  "main": "museruse.js",
+  "main": "entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
