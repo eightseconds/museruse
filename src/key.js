@@ -1,5 +1,4 @@
 
-
 class Key {
     constructor(game, x, y, color, letter) {
         this.cvs = game.cvs;
@@ -15,8 +14,32 @@ class Key {
         this.key = 0;
         this.letter = letter;
         this.trackInput = this.trackInput.bind(this);
+        this.state = {
+            S: false,
+            D: false,
+            F: false,
+            J: false,
+            K: false,
+            L: false
+        }
 
     }
+
+    getKeyIndex(key) {
+        if (key === 'S') {
+            return 0;
+        } else if (key === 'D') {
+            return 1;
+        } else if (key === 'F') {
+            return 2;
+        } else if (key === 'J') {
+            return 3;
+        } else if (key === 'K') {
+            return 4;
+        } else if (key === 'L') {
+            return 5;
+        }
+    };
     
     trackInput() {
         document.addEventListener('keydown', (e) => {
