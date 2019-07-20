@@ -23,27 +23,86 @@ class Key {
             L: false
         }
 
+        this.keyPress = this.keyPress.bind(this);
+        this.keyUp = this.keyUp.bind(this);
+
     }
 
-    getKeyIndex(key) {
-        if (key === 'S') {
-            return 0;
-        } else if (key === 'D') {
-            return 1;
-        } else if (key === 'F') {
-            return 2;
-        } else if (key === 'J') {
-            return 3;
-        } else if (key === 'K') {
-            return 4;
-        } else if (key === 'L') {
-            return 5;
+    keyPress(key) {
+        if (this.state[key] = false) {
+            this.state[key] = true;
+            this.ctx.fillStyle = 'black';
+            this.ctx.fillRect(this.pos.x, this.pos.y - 10, this.w, 10)
         }
-    };
-    
+    }
+
+    keyUp(key) {
+        this.state[key] = false;
+        if (Object.values(this.state).every(key => this.state[key] === false)) {
+            this.ctx.clearRect(0, 0, this.w, this.h)
+            this.draw();
+        } else {
+            this.ctx.clearRect(this.pos.x, this.pos.y - 10, this.w, 10)
+            this.draw();
+        }
+    }
+
     trackInput() {
-        document.addEventListener('keydown', (e) => {
-            
+        window.addEventListener('keydown', (e) => {
+            switch(e.keyCode) {
+                case 83:
+                    this.keyPress('S');
+                    console.log("Hey")
+                    break;
+                
+                case 68:
+                    this.keyPress('D');
+                    break;
+                
+                case 70:
+                    this.keyPress('F');
+                    break;
+                
+                case 74:
+                    this.keyPress('J');
+                    break;
+                
+                case 75:
+                    this.keyPress('K');
+                    break;
+                
+                case 76:
+                    this.keyPress('L');
+                    break;
+            }
+        })
+
+        window.addEventListener('keyup', (e) => {
+            switch (e.keyCode) {
+                case 83:
+                    this.keyUp('S');
+                    break;
+
+                case 68:
+                    this.keyUp('D');
+                    break;
+
+                case 70:
+                    this.keyUp('F');
+                    break;
+
+                case 74:
+                    this.keyUp('J');
+                    break;
+
+                case 75:
+                    this.keyUp('K');
+                    break;
+
+                case 76:
+                    this.keyUp('L');
+                    break;
+            }
         })
     }
 

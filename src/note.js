@@ -15,12 +15,14 @@ class Note {
         this.color = color;
         this.letter = letter;
         this.velocity = VELOCITY;
+        this.active = true;
     }
-
-
 
     update() {
         this.pos.y += this.velocity;
+        if (this.pos.y === this.cvs.height - 100) {
+            this.active = false;
+        }
     }
 
     draw() {
