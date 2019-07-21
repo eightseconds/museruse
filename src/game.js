@@ -1,13 +1,5 @@
 import Key from './key';
 
-// 83
-// 68
-// 70
-// 74
-// 75
-// 76
-
-
 const COLORS = {
     RED: "#F9B9B9",
     BLUE: "#5DC9FF",

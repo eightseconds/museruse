@@ -31,7 +31,7 @@ class Key {
         if (this.state[key] === false) {
             this.state[key] = true;
             // debugger
-            this.ctx.fillStyle = 'black';
+            this.ctx.fillStyle = '#0074D9';
             this.ctx.fillRect(this.pos.x + num, this.pos.y - 10, this.w, 10)
         }
     }
