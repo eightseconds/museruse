@@ -23,7 +23,7 @@ class Game {
         this.notes = [];
 
         this.init = this.init.bind(this);
-        this.loop = this.loop.bind(this);
+        // this.loop = this.loop.bind(this);
     }
 
     init() {
@@ -35,8 +35,8 @@ class Game {
         this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 4), this.cvs.height - 120, COLORS['BLUE'], 'K'));
         this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 5), this.cvs.height - 120, COLORS['RED'], 'L'));
 
-        this.loop();
-        this.keys[0].trackInput();
+        this.draw()
+        this.keys[0].trackInput();  
     }
     
     draw() {
@@ -49,11 +49,11 @@ class Game {
         this.keys.forEach(key => key.update());
     }
     
-    loop() {
-        this.update();
-        this.draw();
-        window.requestAnimationFrame(this.loop);
-    }
+    // loop() {
+    //     this.update();
+    //     this.draw();
+    //     window.requestAnimationFrame(this.loop);
+    // }
 }
 
 export default Game

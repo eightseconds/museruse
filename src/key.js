@@ -13,7 +13,6 @@ class Key {
         this.color = color;
         this.key = 0;
         this.letter = letter;
-        this.trackInput = this.trackInput.bind(this);
         this.state = {
             S: false,
             D: false,
@@ -22,15 +21,16 @@ class Key {
             K: false,
             L: false
         }
-
+        
+        this.trackInput = this.trackInput.bind(this);
         this.keyPress = this.keyPress.bind(this);
         this.keyUp = this.keyUp.bind(this);
-
     }
 
     keyPress(key) {
-        if (this.state[key] = false) {
+        if (this.state[key] === false) {
             this.state[key] = true;
+            // debugger
             this.ctx.fillStyle = 'black';
             this.ctx.fillRect(this.pos.x, this.pos.y - 10, this.w, 10)
         }
@@ -38,21 +38,22 @@ class Key {
 
     keyUp(key) {
         this.state[key] = false;
-        if (Object.values(this.state).every(key => this.state[key] === false)) {
+        if (this.state[key] === false) {
+            // debugger
             this.ctx.clearRect(0, 0, this.w, this.h)
             this.draw();
         } else {
+            // debugger
             this.ctx.clearRect(this.pos.x, this.pos.y - 10, this.w, 10)
             this.draw();
         }
     }
 
     trackInput() {
-        window.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', (e) => {
             switch(e.keyCode) {
                 case 83:
                     this.keyPress('S');
-                    console.log("Hey")
                     break;
                 
                 case 68:
@@ -77,7 +78,7 @@ class Key {
             }
         })
 
-        window.addEventListener('keyup', (e) => {
+        document.addEventListener('keyup', (e) => {
             switch (e.keyCode) {
                 case 83:
                     this.keyUp('S');
@@ -118,6 +119,10 @@ class Key {
         this.ctx.font = '15px Arial'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 60)
+    }
+
+    update() {
+        this.draw();
     }
 
 }
