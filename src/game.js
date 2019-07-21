@@ -1,7 +1,6 @@
 import Key from './key';
-import * as Song from '../media/song';
 import BeatMap from './beatmap';
-import gd from '../media/beatmaps/gd.js';
+import music from '../media/beatmaps/brahms.js';
 // import gd from '../media/audio/gd.mp3';
 
 
@@ -15,11 +14,11 @@ class Game {
     constructor(cvs, ctx) {
         this.cvs = cvs;
         this.ctx = ctx;
-    
         this.keys = [];
         this.notes = [];
         this.playSong = this.playSong.bind(this);
         this.init = this.init.bind(this);
+        this.beatMap;
         // this.loop = this.loop.bind(this);
     }
 
@@ -34,16 +33,17 @@ class Game {
         // Song.playSong('gd');
         this.draw()
         this.keys[0].trackInput();  
-        this.playSong();
     }
 
     playSong() {
         this.beatMap = new BeatMap(
-            gd.notes[0].slice(0),
-            gd.notes[1].slice(0),
-            gd.notes[2].slice(0),
-            gd.notes[3].slice(0),
-            gd.speed
+            music.notes[0].slice(0),
+            music.notes[1].slice(0),
+            music.notes[2].slice(0),
+            music.notes[3].slice(0),
+            music.notes[4].slice(0),
+            music.notes[5].slice(0),
+            music.speed
         );
         this.beatMap.startTime = new Date().getTime();
         this.beatMap.currentTime = new Date().getTime();
@@ -52,13 +52,47 @@ class Game {
             this.beatMap.addNotes(1);
             this.beatMap.addNotes(2);
             this.beatMap.addNotes(3);
+            this.beatMap.addNotes(4);
+            this.beatMap.addNotes(5);
             this.beatMap.drawBeatMap();
         }, 1);
         
         // debugger;
         // setTimeout( () => {
         //     Song.playSong('gd');
-        // }, 1000);    
+        // }, 900);    
+        // let song = new Audio();
+        // song.src = gd;
+        // song.play();
+
+        document.addEventListener('keydown', (e) => {
+            switch (e.keyCode) {
+
+                case 83:
+                    this.beatMap.keyHit(0);
+                    break;
+
+                case 68:
+                    this.beatMap.keyHit(1);
+                    break;
+
+                case 70:
+                    this.beatMap.keyHit(2);
+                    break;
+
+                case 74:
+                    this.beatMap.keyHit(3);
+                    break;
+
+                case 75:
+                    this.beatMap.keyHit(4);
+                    break;
+
+                case 76:
+                    this.beatMap.keyHit(5);
+                    break;
+            }
+        })
     }
     
     draw() {
@@ -69,14 +103,15 @@ class Game {
     
     update(){
         this.keys.forEach(key => key.update());
+        this.notes.forEach(note => note.update());
     }
     
 
-    // loop() {
-    //     this.update();
-    //     this.draw();
-    //     window.requestAnimationFrame(this.loop);
-    // }
+    loop() {
+        this.update();
+        this.draw();
+        window.requestAnimationFrame(this.loop);
+    }
 }
 
 export default Game

@@ -1,8 +1,10 @@
+import * as Song from '../media/song';
 
 class Key {
     constructor(game, x, y, color, letter) {
         this.cvs = game.cvs;
         this.ctx = game.ctx;
+        this.game = game;
  
         this.w = 70;
         this.h = 120;
@@ -59,8 +61,13 @@ class Key {
     trackInput() {
         document.addEventListener('keydown', (e) => {
             switch(e.keyCode) {
+                case 80:
+                    this.game.playSong();
+                    Song.playSong('music')
+                    break;
+
                 case 83:
-                    this.keyPress(0, 'S');
+                    this.keyPress(0, 'S');                
                     break;
                 
                 case 68:
@@ -68,9 +75,9 @@ class Key {
                     break;
                 
                 case 70:
-                    this.keyPress(140, 'F');
+                   this.keyPress(140, 'F');
                     break;
-                
+               
                 case 74:
                     this.keyPress(210, 'J');
                     break;
@@ -78,7 +85,7 @@ class Key {
                 case 75:
                     this.keyPress(280, 'K');
                     break;
-                
+               
                 case 76:
                     this.keyPress(350, 'L');
                     break;
@@ -112,10 +119,6 @@ class Key {
                     break;
             }
         })
-    }
-
-    update() {
-
     }
 
     draw() {
