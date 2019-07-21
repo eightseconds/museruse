@@ -1,7 +1,7 @@
-import Note from './note';
+import Note from './note.js';
 
 class Column {
-    constructor( col) {
+    constructor(col) {
         this.col = col;
         this.cvs = document.getElementById(`${this.col}`);
         this.ctx = this.cvs.getContext("2d");
@@ -14,6 +14,28 @@ class Column {
 
     addNote() {
         const note = new Note(this.col);
+        this.notes.push(note);
+    }
+
+    drawNotes(speed) {
+        if (this.notes.length > 0) {
+            this.notes.forEach(note => {
+                note.pos.y += speed;
+                note.drawNote();
+            })
+        }
+    }
+
+    deleteNotes() {
+        let pastNotes = 0;
+        if (this.notes.length > 0) {
+            this.notes.forEach(note => {
+                if (note.pos.y >= this.cvs.height * .75 - 10) {
+                    pastNotes ++;
+                }
+            })
+        }
+        this.notes.splice(0, pastNotes);
     }
 }
 

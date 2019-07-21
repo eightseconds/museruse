@@ -5,6 +5,5 @@ document.addEventListener('DOMContentLoaded', () => {
     let context = canvas.getContext("2d")
     let game = new Game(canvas, context);
     window.game = game;
-    
     game.init();
 })

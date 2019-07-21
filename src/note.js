@@ -1,22 +1,24 @@
-const VELOCITY = 5
-
-
 class Note {
     constructor(col) {
         this.col = col;
-        
-    }
-
-    update() {
-        this.pos.y += this.velocity;
-        if (this.pos.y === this.cvs.height - 100) {
-            this.active = false;
+        this.cvs = document.getElementById(`${this.col}`);
+        this.ctx = this.cvs.getContext('2d');
+        this.pos = {
+            y: - this.cvs.height * 0.8
         }
     }
 
-    draw() {
-        this.ctx.fillStyle = this.color;
-        this.ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);
+    drawNote() {
+        this.col > 0 && this.col < 3 ?
+            this.ctx.fillStyle = 'rgba(0, 210, 255, .7)' :
+            this.ctx.fillStyle = 'rgba(155, 255, 0, .7 )';
+        this.ctx.strokeStyle = 'black';
+
+        this.col === 0 ? this.ctx.fillRect(this.cvs.width * .167 * this.col, this.pos.y, this.cvs.width * .167, 10) :
+            this.ctx.fillRect(this.cvs.width * .167 * this.col + 5, this.pos.y, this.cvs.width * .167 - 5, 10);
+
+        this.col === 0 ? this.ctx.strokeRect(this.cvs.width * .167 * this.col, this.pos.y, this.cvs.width * .167, 10) :
+            this.ctx.strokeRect(this.cvs.width * .167 * this.col + 5, this.pos.y, this.cvs.width * .167 - 5, 10);
     }
 
 }
