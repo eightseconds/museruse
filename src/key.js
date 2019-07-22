@@ -1,8 +1,10 @@
+import * as Song from '../media/song';
 
 class Key {
     constructor(game, x, y, color, letter) {
         this.cvs = game.cvs;
         this.ctx = game.ctx;
+        this.game = game;
  
         this.w = 70;
         this.h = 120;
@@ -13,7 +15,6 @@ class Key {
         this.color = color;
         this.key = 0;
         this.letter = letter;
-        this.trackInput = this.trackInput.bind(this);
         this.state = {
             S: false,
             D: false,
@@ -22,43 +23,139 @@ class Key {
             K: false,
             L: false
         }
-
+        
+        this.trackInput = this.trackInput.bind(this);
+        this.keyPress = this.keyPress.bind(this);
+        this.keyUp = this.keyUp.bind(this);
     }
 
-    getKeyIndex(key) {
-        if (key === 'S') {
-            return 0;
-        } else if (key === 'D') {
-            return 1;
-        } else if (key === 'F') {
-            return 2;
-        } else if (key === 'J') {
-            return 3;
-        } else if (key === 'K') {
-            return 4;
-        } else if (key === 'L') {
-            return 5;
+    keyPress(num, key) {
+        if (this.state[key] === false) {
+            this.state[key] = true;
+            // debugger
+            this.ctx.fillStyle = '#0074D9';
+            this.ctx.fillRect(this.pos.x + num, this.pos.y - 20, this.w, 20)
         }
-    };
-    
+    }
+
+    keyUp(num, key) {
+        this.state[key] = false;
+        if ( this.state[key] === false
+            // this.state['S'] === false &&
+            // this.state['D'] === false &&
+            // this.state['F'] === false &&
+            // this.state['J'] === false &&
+            // this.state['K'] === false &&
+            // this.state['L'] === false
+        ) {
+            // debugger
+            this.ctx.clearRect(0, 0, this.w, 20);
+            this.draw();
+
+        } else {
+            // debugger
+            this.ctx.clearRect(this.pos.x + num, this.pos.y - 20, this.w, 20)
+            this.draw();
+        }
+    }
+
     trackInput() {
         document.addEventListener('keydown', (e) => {
-            
+            switch(e.keyCode) {
+                case 80:
+                    this.game.playSong();
+                    Song.playSong('music')
+                    break;
+
+                case 83:
+                    this.keyPress(0, 'S');                
+                    break;
+                
+                case 68:
+                    this.keyPress(70, 'D');
+                    break;
+                
+                case 70:
+                   this.keyPress(140, 'F');
+                    break;
+               
+                case 74:
+                    this.keyPress(210, 'J');
+                    break;
+                
+                case 75:
+                    this.keyPress(280, 'K');
+                    break;
+               
+                case 76:
+                    this.keyPress(350, 'L');
+                    break;
+            }
         })
-    }
 
-    update() {
+        document.addEventListener('keyup', (e) => {
+            switch (e.keyCode) {
+                case 83:
+                    this.keyUp(0, 'S');
+                    break;
 
+                case 68:
+                    this.keyUp(70, 'D');
+                    break;
+
+                case 70:
+                    this.keyUp(140, 'F');
+                    break;
+
+                case 74:
+                    this.keyUp(210, 'J');
+                    break;
+
+                case 75:
+                    this.keyUp(280, 'K');
+                    break;
+
+                case 76:
+                    this.keyUp(350, 'L');
+                    break;
+            }
+        })
     }
 
     draw() {
         this.ctx.fillStyle = '#b3b3b3';
-        this.ctx.fillRect(this.pos.x, this.pos.y - 10, this.w, 10)
+        this.ctx.fillRect(this.pos.x, this.pos.y - 20, this.w * 6, 20)
         this.ctx.fillStyle = this.color;
         this.ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);
         this.ctx.font = '15px Arial'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 60)
+
+        this.ctx.strokeStyle = "#b3b3b3"
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w, 800)
+        this.ctx.lineTo(this.w, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 70, 800)
+        this.ctx.lineTo(this.w + 70, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 140, 800)
+        this.ctx.lineTo(this.w + 140, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 210, 800)
+        this.ctx.lineTo(this.w + 210, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 280, 800)
+        this.ctx.lineTo(this.w + 280, 0)
+        this.ctx.stroke();
+    }
+
+    update() {
+        this.draw();
     }
 
 }
