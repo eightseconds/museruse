@@ -16,6 +16,7 @@
   "dependencies": {
     "file-loader": "^4.1.0",
     "url-loader": "^2.1.0",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack": "^4.36.1"
   }
 }
