@@ -96,22 +96,21 @@ class Game {
     }
     
     draw() {
-        this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height);
         this.keys.forEach(key => key.draw());    
-        this.notes.forEach(note => note.draw());
+        // this.notes.forEach(note => note.draw());
     }
     
-    update(){
-        this.keys.forEach(key => key.update());
-        this.notes.forEach(note => note.update());
-    }
+    // update(){
+    //     this.keys.forEach(key => key.update());
+    //     this.notes.forEach(note => note.update());
+    // }
     
 
-    loop() {
-        this.update();
-        this.draw();
-        window.requestAnimationFrame(this.loop);
-    }
+    // loop() {
+    //     this.update();
+    //     this.draw();
+    //     window.requestAnimationFrame(this.loop);
+    // }
 }
 
 export default Game

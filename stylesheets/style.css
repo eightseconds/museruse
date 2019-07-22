@@ -1,20 +1,30 @@
-a.btn {
-  display: inline-block;
-  border: 1px solid white;
-  text-transform: uppercase;
-  text-decoration: none;
+html {
+  background-color: black;
+}
+
+.museruse--ui {
+  display: flex;
+}
+
+.menu {
+  display: flex;
   color: white;
-  margin: 0 auto;
-  transition: all .2s;
+  padding-right: 50px;
+}
+
+.canvas--container {
+  width: 420px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.content {
+    width: 420px;
+    height: 800px;
+}
+
+.track {
   position: absolute;
-}
-
-.btn:hover {
-  background: white;
-  color: black;
-}
-
-.btn--start {
-  border-radius: 1rem;
-  padding: 2rem 4rem;
 }

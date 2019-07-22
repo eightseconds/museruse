@@ -26,15 +26,6 @@ class BeatMap {
 
         this.addNotes = this.addNotes.bind(this);
         this.keyHit = this.keyHit.bind(this);
-
-        this.beatTracker = {
-            0: [],
-            1: [],
-            2: [],
-            3: [],
-            4: [],
-            5: [],
-        }
     }
 
     addNotes(colNum) {
@@ -45,7 +36,6 @@ class BeatMap {
     }
 
     drawBeatMap() {
-        // this.ctx.clearRect(0, 0, 0, 0)
         this.cols[0].drawNotes(this.speed);
         this.cols[1].drawNotes(this.speed);
         this.cols[2].drawNotes(this.speed);
@@ -57,7 +47,7 @@ class BeatMap {
     }
 
     keyHit(colNum) {
-        this.cols[colNum].deleteNotes(0);
+        this.cols[colNum].deleteNotes();
         // this.beatTracker(colNum).push(Math.round((this.currentTime - this.startTime)/10) * 10 - (380 * 3) - 80);
     }
 }

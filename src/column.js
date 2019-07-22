@@ -18,6 +18,7 @@ class Column {
     }
 
     drawNotes(speed) {
+        this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height)
         if (this.notes.length > 0) {
             this.notes.forEach(note => {
                 note.pos.y += speed;
@@ -30,7 +31,7 @@ class Column {
         let pastNotes = 0;
         if (this.notes.length > 0) {
             this.notes.forEach(note => {
-                if (note.pos.y >= 680) {
+                if (note.pos.y >= 700 - this.cvs.height * .08) {
                     pastNotes ++;
                 }
             })

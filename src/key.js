@@ -49,11 +49,12 @@ class Key {
             // this.state['L'] === false
         ) {
             // debugger
-            this.ctx.clearRect(this.pos.x + num, this.pos.y - 20, this.w, 20)
+            this.ctx.clearRect(0, 0, this.w, 20);
             this.draw();
+
         } else {
             // debugger
-            this.ctx.clearRect(0, 0, this.w, 20)
+            this.ctx.clearRect(this.pos.x + num, this.pos.y - 20, this.w, 20)
             this.draw();
         }
     }

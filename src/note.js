@@ -11,8 +11,6 @@ class Note {
     }
 
     drawNote() {
-    
-        this.ctx.clearRect(70 * this.col, 0, 70, 800)
         this.col === 0 || this.col === 5 ?
             this.ctx.fillStyle = '#F9B9B9' :
         this.col === 1 || this.col === 4 ?
