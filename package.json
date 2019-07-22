@@ -5,7 +5,7 @@
   "main": "entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development",
+    "start": "webpack",
     "postinstall": "webpack --mode=production"
   },
   "keywords": [],
