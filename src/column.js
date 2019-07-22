@@ -30,7 +30,7 @@ class Column {
         let pastNotes = 0;
         if (this.notes.length > 0) {
             this.notes.forEach(note => {
-                if (note.pos.y >= this.cvs.height * .75 - 10) {
+                if (note.pos.y >= 680) {
                     pastNotes ++;
                 }
             })

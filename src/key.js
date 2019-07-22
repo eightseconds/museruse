@@ -34,7 +34,7 @@ class Key {
             this.state[key] = true;
             // debugger
             this.ctx.fillStyle = '#0074D9';
-            this.ctx.fillRect(this.pos.x + num, this.pos.y - 10, this.w, 10)
+            this.ctx.fillRect(this.pos.x + num, this.pos.y - 20, this.w, 20)
         }
     }
 
@@ -49,11 +49,11 @@ class Key {
             // this.state['L'] === false
         ) {
             // debugger
-            this.ctx.clearRect(this.pos.x + num, this.pos.y - 10, this.w, 10)
+            this.ctx.clearRect(this.pos.x + num, this.pos.y - 20, this.w, 20)
             this.draw();
         } else {
             // debugger
-            this.ctx.clearRect(0, 0, this.w, 10)
+            this.ctx.clearRect(0, 0, this.w, 20)
             this.draw();
         }
     }
@@ -123,12 +123,34 @@ class Key {
 
     draw() {
         this.ctx.fillStyle = '#b3b3b3';
-        this.ctx.fillRect(this.pos.x, this.pos.y - 10, this.w * 6, 10)
+        this.ctx.fillRect(this.pos.x, this.pos.y - 20, this.w * 6, 20)
         this.ctx.fillStyle = this.color;
         this.ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);
         this.ctx.font = '15px Arial'
         this.ctx.fillStyle = "black"
         this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 60)
+
+        this.ctx.strokeStyle = "#b3b3b3"
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w, 800)
+        this.ctx.lineTo(this.w, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 70, 800)
+        this.ctx.lineTo(this.w + 70, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 140, 800)
+        this.ctx.lineTo(this.w + 140, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 210, 800)
+        this.ctx.lineTo(this.w + 210, 0)
+        this.ctx.stroke();
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.w + 280, 800)
+        this.ctx.lineTo(this.w + 280, 0)
+        this.ctx.stroke();
     }
 
     update() {
