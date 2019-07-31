@@ -19,10 +19,7 @@ class Note {
 
         this.ctx.strokeStyle = '#000000';
         this.ctx.fillRect(70 * this.col, this.pos.y, 70, 20) 
-            // this.ctx.fillRect(70 * this.col + 5, this.pos.y, 70 - 5, 20);
-
         this.ctx.strokeRect(70 * this.col, this.pos.y, 70, 20) 
-            // this.ctx.strokeRect(70 * this.col + 5, this.pos.y, 70 - 5, 20);
     }
 
     update() {

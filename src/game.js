@@ -1,7 +1,6 @@
 import Key from './key';
 import BeatMap from './beatmap';
 import music from '../media/beatmaps/brahms.js';
-// import gd from '../media/audio/gd.mp3';
 
 
 const COLORS = {
@@ -19,7 +18,6 @@ class Game {
         this.playSong = this.playSong.bind(this);
         this.init = this.init.bind(this);
         this.beatMap;
-        // this.loop = this.loop.bind(this);
     }
 
     init() {
@@ -30,7 +28,6 @@ class Game {
         this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 3), this.cvs.height - 120, COLORS['YELLOW'], 'J'));
         this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 4), this.cvs.height - 120, COLORS['BLUE'], 'K'));
         this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 5), this.cvs.height - 120, COLORS['RED'], 'L'));
-        // Song.playSong('gd');
         this.draw()
         this.keys[0].trackInput();  
     }
@@ -56,14 +53,6 @@ class Game {
             this.beatMap.addNotes(5);
             this.beatMap.drawBeatMap();
         }, 1);
-        
-        // debugger;
-        // setTimeout( () => {
-        //     Song.playSong('gd');
-        // }, 900);    
-        // let song = new Audio();
-        // song.src = gd;
-        // song.play();
 
         document.addEventListener('keydown', (e) => {
             switch (e.keyCode) {

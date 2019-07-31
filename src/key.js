@@ -41,14 +41,7 @@ class Key {
     keyUp(num, key) {
         this.state[key] = false;
         if ( this.state[key] === false
-            // this.state['S'] === false &&
-            // this.state['D'] === false &&
-            // this.state['F'] === false &&
-            // this.state['J'] === false &&
-            // this.state['K'] === false &&
-            // this.state['L'] === false
         ) {
-            // debugger
             this.ctx.clearRect(0, 0, this.w, 20);
             this.draw();
 

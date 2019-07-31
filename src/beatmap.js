@@ -48,7 +48,6 @@ class BeatMap {
 
     keyHit(colNum) {
         this.cols[colNum].deleteNotes();
-        // this.beatTracker(colNum).push(Math.round((this.currentTime - this.startTime)/10) * 10 - (380 * 3) - 80);
     }
 }
 
