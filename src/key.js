@@ -1,4 +1,3 @@
-import * as Song from '../media/song';
 
 class Key {
     constructor(game, x, y, color, letter) {
@@ -57,7 +56,7 @@ class Key {
             switch(e.keyCode) {
                 case 80:
                     this.game.playSong();
-                    Song.playSong('music')
+                    new Audio('./media/audio/brahms.mp3').play()
                     break;
 
                 case 83:
@@ -122,7 +121,7 @@ class Key {
         this.ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);
         this.ctx.font = '15px Arial'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 60)
+        this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 40)
 
         this.ctx.strokeStyle = "#b3b3b3"
         this.ctx.beginPath();

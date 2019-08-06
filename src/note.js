@@ -22,9 +22,9 @@ class Note {
         this.ctx.strokeRect(70 * this.col, this.pos.y, 70, 20) 
     }
 
-    update() {
-        this.drawNote();
-    }
+    // update() {
+    //     this.drawNote();
+    // }
 
 }
 
