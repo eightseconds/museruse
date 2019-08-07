@@ -56,7 +56,7 @@ class Key {
             switch(e.keyCode) {
                 case 80:
                     this.game.playSong();
-                    new Audio('./media/audio/brahms.mp3').play()
+                    new Audio('./media/audio/brahmsjs.mp3').play()
                     break;
 
                 case 83:
