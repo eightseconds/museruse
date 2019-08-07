@@ -5,8 +5,8 @@ class Key {
         this.ctx = game.ctx;
         this.game = game;
  
-        this.w = 70;
-        this.h = 120;
+        this.w = this.cvs.width / 6;
+        this.h = this.cvs.height / 6.66;
         this.pos = {
             x: x,
             y: y,
@@ -52,11 +52,15 @@ class Key {
     }
 
     trackInput() {
+        let started = false;
         document.addEventListener('keydown', (e) => {
             switch(e.keyCode) {
-                case 80:
-                    this.game.playSong();
-                    new Audio('./media/audio/brahmsjs.mp3').play()
+                case 80: 
+                    if (started === false) {
+                        this.game.playSong();
+                        new Audio('./media/audio/brahmsjs.mp3').play()
+                    }
+                    started = true;
                     break;
 
                 case 83:

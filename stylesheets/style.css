@@ -1,6 +1,6 @@
-html {
+/* html {
   background-color: black;
-}
+} */
 
 .museruse--ui {
   display: flex;
@@ -10,8 +10,22 @@ html {
 
 .menu {
   display: flex;
-  color: white;
-  padding-right: 50px;
+  flex-direction: column;
+  position: absolute;
+  right: 20%;
+  top: 10%;
+
+  /* background: white;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  justify-content: center; */
+}
+
+.span {
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;  
 }
 
 .canvas--container {
@@ -20,7 +34,20 @@ html {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  left: 25%;
 }
+
+.music {
+  color: red;
+}
+
+.background {
+  overflow-y: hidden;
+}
+
 
 .content {
     width: 420px;

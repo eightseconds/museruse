@@ -1,9 +1,6 @@
 import Note from './note.js';
 
-
-// console.log(`counter=${COUNTER}`)
-// console.log(`missed=${MISSED}`)
-// console.log(COUNTER / MISSED * 100)
+var COUNTER = 0;
 
 class Column {
     constructor(col) {
@@ -20,7 +17,6 @@ class Column {
     addNote() {
         const note = new Note(this.col);
         this.notes.push(note);
-        // TOTALNOTES ++;
     }
 
     drawNotes(speed) {
@@ -37,13 +33,16 @@ class Column {
         let pastNotes = 0;
         if (this.notes.length > 0) {
             this.notes.forEach(note => {
-                if (note.pos.y >= 720 - this.cvs.height * .10 && note.pos.y < this.cvs.height) {
+                if (note.pos.y >= 720 - this.cvs.height * .10) {
                     pastNotes ++;
+                    COUNTER++;
                 }
             })
         }
         this.notes.splice(0, pastNotes);
+        console.log(`progress=${COUNTER / 128 * 100}`)
     }
+
 
 }
 
