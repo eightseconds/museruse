@@ -24,6 +24,7 @@ class BeatMap {
             5: new Column(5),
         }
 
+
         this.addNotes = this.addNotes.bind(this);
         this.keyHit = this.keyHit.bind(this);
     }

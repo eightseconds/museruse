@@ -123,6 +123,7 @@ class Key {
         this.ctx.fillStyle = "black"
         this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 40)
 
+
         this.ctx.strokeStyle = "#b3b3b3"
         this.ctx.beginPath();
         this.ctx.moveTo(this.w, 800)
@@ -149,6 +150,7 @@ class Key {
     update() {
         this.draw();
     }
+
 
 }
 
