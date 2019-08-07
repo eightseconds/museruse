@@ -23,7 +23,3 @@ const beatMap = new BeatMap(col0, col1, col2, col3, col4, col5, 2);
 
 
 export default beatMap;
-
-
-// every beat 200
-// 

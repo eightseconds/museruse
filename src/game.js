@@ -86,8 +86,7 @@ class Game {
     }
     
     draw() {
-        this.keys.forEach(key => key.draw());    
-        // this.notes.forEach(note => note.draw());
+        this.keys.forEach(key => key.draw());   
     }
     
     // update(){
