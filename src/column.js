@@ -6,6 +6,7 @@ class Column {
     constructor(col) {
         this.col = col;
         this.cvs = document.getElementById(`${this.col}`);
+        this.cvs.height = window.innerHeight;
         this.ctx = this.cvs.getContext("2d");
         this.notes = [];
 
@@ -33,7 +34,8 @@ class Column {
         let pastNotes = 0;
         if (this.notes.length > 0) {
             this.notes.forEach(note => {
-                if (note.pos.y >= 720 - this.cvs.height * .10) {
+                // debugger;
+                if (note.pos.y >= this.cvs.height * .90 - this.cvs.height * .10) {
                     pastNotes ++;
                     COUNTER++;
                 }

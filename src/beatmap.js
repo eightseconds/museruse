@@ -1,7 +1,8 @@
 import Column from './column';
 
 class BeatMap {
-    constructor(notes0, notes1, notes2, notes3, notes4, notes5, speed) {
+    constructor(notes0, notes1, notes2, notes3, notes4, notes5) {
+        let canvas = document.getElementById('canvas')
         this.startTime = 0;
         this.currentTime = 0;
         this.notes = {
@@ -12,7 +13,8 @@ class BeatMap {
             4: notes4.slice(0),
             5: notes5.slice(0),
         }
-        this.speed = speed;
+
+        this.speed = canvas.height / 400;
         
         // debugger
         this.cols = {

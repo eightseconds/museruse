@@ -130,23 +130,23 @@ class Key {
 
         this.ctx.strokeStyle = "#b3b3b3"
         this.ctx.beginPath();
-        this.ctx.moveTo(this.w, 800)
+        this.ctx.moveTo(this.w, this.cvs.height)
         this.ctx.lineTo(this.w, 0)
         this.ctx.stroke();
         this.ctx.beginPath();
-        this.ctx.moveTo(this.w + 70, 800)
+        this.ctx.moveTo(this.w + 70, this.cvs.height)
         this.ctx.lineTo(this.w + 70, 0)
         this.ctx.stroke();
         this.ctx.beginPath();
-        this.ctx.moveTo(this.w + 140, 800)
+        this.ctx.moveTo(this.w + 140, this.cvs.height)
         this.ctx.lineTo(this.w + 140, 0)
         this.ctx.stroke();
         this.ctx.beginPath();
-        this.ctx.moveTo(this.w + 210, 800)
+        this.ctx.moveTo(this.w + 210, this.cvs.height)
         this.ctx.lineTo(this.w + 210, 0)
         this.ctx.stroke();
         this.ctx.beginPath();
-        this.ctx.moveTo(this.w + 280, 800)
+        this.ctx.moveTo(this.w + 280, this.cvs.height)
         this.ctx.lineTo(this.w + 280, 0)
         this.ctx.stroke();
     }

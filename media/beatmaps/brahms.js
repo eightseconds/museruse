@@ -19,7 +19,7 @@ const col5 =
 [0, 1600, 1800, 7800, 10800, 13200, 16000, 20500, 24000, 25500, 26400, 29200, 37000, 41400, 43000, 48000]
 
 
-const beatMap = new BeatMap(col0, col1, col2, col3, col4, col5, 2);
+const beatMap = new BeatMap(col0, col1, col2, col3, col4, col5);
 
 
 export default beatMap;
