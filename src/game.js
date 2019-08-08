@@ -33,6 +33,7 @@ class Game {
     }
 
     playSong() {
+
         this.beatMap = new BeatMap(
             music.notes[0].slice(0),
             music.notes[1].slice(0),
@@ -56,30 +57,38 @@ class Game {
         , 0);
 
         document.addEventListener('keydown', (e) => {
+            let hitSound = new Audio('./media/audio/soft-hitclap.wav')
+            hitSound.volume = 0.2;
             switch (e.keyCode) {
 
                 case 83:
                     this.beatMap.keyHit(0);
+                    hitSound.play();
                     break;
 
                 case 68:
                     this.beatMap.keyHit(1);
+                    hitSound.play();
                     break;
 
                 case 70:
                     this.beatMap.keyHit(2);
+                    hitSound.play();
                     break;
 
                 case 74:
                     this.beatMap.keyHit(3);
+                    hitSound.play();
                     break;
 
                 case 75:
                     this.beatMap.keyHit(4);
+                    hitSound.play();
                     break;
 
                 case 76:
                     this.beatMap.keyHit(5);
+                    hitSound.play();
                     break;
             }
         })
