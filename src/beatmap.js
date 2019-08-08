@@ -77,10 +77,11 @@ class BeatMap {
         this.ctx.fillText(`Score`, this.scoreCanvas.width * .05, this.scoreCanvas.height * .2);
         this.ctx.fillText(`${this.score}`, this.scoreCanvas.width * .05, this.scoreCanvas.height * .25);
         
-        // this.ctx.fillText(`Combo`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .6);
-        this.ctx.font = '40px Arial'
+        this.ctx.font = '30px Arial'
         this.ctx.textAlign = 'center'
-        this.ctx.fillText(`${this.comboCounter}`, this.scoreCanvas.width * .66, this.scoreCanvas.height * .9);
+        this.ctx.fillText(`Combo`, this.scoreCanvas.width * .66, this.scoreCanvas.height * .8);
+        this.ctx.font = '60px Arial'
+        this.ctx.fillText(`${this.comboCounter}`, this.scoreCanvas.width * .66, this.scoreCanvas.height * .95);
     }
 }
 
