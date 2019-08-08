@@ -22,9 +22,17 @@ class Note {
         this.ctx.strokeRect(70 * this.col, this.pos.y, 70, 20) 
     }
 
-    // update() {
-    //     this.drawNote();
-    // }
+    update() {
+        this.drawNote();
+    }
+
+    perfect() {
+        return this.pos.y >= this.cvs.height * .84 && this.pos.y <= this.cvs.height * .94;
+    }
+
+    great() {
+        return this.pos.y >= this.cvs.height * .80 && this.pos.y <= this.cvs.height * .98;
+    }
 
 }
 

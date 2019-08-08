@@ -29,6 +29,14 @@ class BeatMap {
 
         this.addNotes = this.addNotes.bind(this);
         this.keyHit = this.keyHit.bind(this);
+        this.scoreCanvas = document.getElementById("outer");
+        this.scoreCanvas.height = 300
+        this.ctx = this.scoreCanvas.getContext("2d");
+
+        this.score = 0;
+        this.comboCounter = 0;
+
+        // this.displayScore = this.displayScore.bind(this);
     }
 
     addNotes(colNum) {
@@ -39,18 +47,37 @@ class BeatMap {
     }
 
     drawBeatMap() {
-        this.cols[0].drawNotes(this.speed);
-        this.cols[1].drawNotes(this.speed);
-        this.cols[2].drawNotes(this.speed);
-        this.cols[3].drawNotes(this.speed);
-        this.cols[4].drawNotes(this.speed);
-        this.cols[5].drawNotes(this.speed);
+        let missedNotes0 = this.cols[0].drawNotes(this.comboCounter, this.speed);
+        let missedNotes1 = this.cols[1].drawNotes(this.comboCounter, this.speed);
+        let missedNotes2 = this.cols[2].drawNotes(this.comboCounter, this.speed);
+        let missedNotes3 = this.cols[3].drawNotes(this.comboCounter, this.speed);
+        let missedNotes4 = this.cols[4].drawNotes(this.comboCounter, this.speed);
+        let missedNotes5 = this.cols[5].drawNotes(this.comboCounter, this.speed);
+
+        if (missedNotes0.combo === 0 || missedNotes0.combo === 0 || missedNotes1.combo === 0 || missedNotes2.combo === 0 || missedNotes3.combo === 0 || missedNotes4.combo === 0 || missedNotes5.combo === 0) {
+            this.comboCounter = 0;
+        }
 
         this.currentTime = new Date().getTime();
+        this.displayScore();
     }
 
     keyHit(colNum) {
-        this.cols[colNum].deleteNotes();
+        let hitResult = this.cols[colNum].deleteNotes(this.comboCounter);
+        this.score += hitResult.points;
+        this.comboCounter = hitResult.combo;
+
+        // this.cols[colNum].deleteNotes();
+    }
+
+    displayScore() {
+        this.ctx.clearRect(0, 0, this.scoreCanvas.clientWidth, this.scoreCanvas.height);
+        this.ctx.font = '20px Arial'
+        this.ctx.fillText(`Score`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .3);
+        this.ctx.fillText(`${this.score}`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .4);
+        
+        this.ctx.fillText(`Combo`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .6);
+        this.ctx.fillText(`${this.comboCounter}`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .7);
     }
 }
 
