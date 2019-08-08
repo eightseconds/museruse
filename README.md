@@ -16,7 +16,19 @@ When a note reaches the gray timing bar, players should press the appropriate ke
 
 #### Score System
 
-Points are determined by checking the height of the note when a key is pressed. If the note is closer to the sweet spot, more points are given. If the player can maintain a combo, the score will be multiplicative
+Points are determined by checking the height of the note when a key is pressed. If the note is closer to the sweet spot, more points are given. If the player can maintain a combo, the score will be multiplicative. The max possible score is 165120.
+
+```js
+function maxscore() {
+    let sum = 0
+    for (let i = 1; i <= 128; i++) {
+        sum += 20 * i
+    }
+    return sum
+} 
+maxscore() //= 165120
+```
+
 
 #### BeatMap and Note Speed
 
