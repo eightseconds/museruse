@@ -30,9 +30,10 @@ class BeatMap {
         this.addNotes = this.addNotes.bind(this);
         this.keyHit = this.keyHit.bind(this);
         this.scoreCanvas = document.getElementById("outer");
-        this.scoreCanvas.height = 300
+        this.scoreCanvas.height = 500
         this.ctx = this.scoreCanvas.getContext("2d");
 
+        this.width = canvas.width / 2
         this.score = 0;
         this.comboCounter = 0;
 
@@ -73,11 +74,13 @@ class BeatMap {
     displayScore() {
         this.ctx.clearRect(0, 0, this.scoreCanvas.clientWidth, this.scoreCanvas.height);
         this.ctx.font = '20px Arial'
-        this.ctx.fillText(`Score`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .3);
-        this.ctx.fillText(`${this.score}`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .4);
+        this.ctx.fillText(`Score`, this.scoreCanvas.width * .05, this.scoreCanvas.height * .2);
+        this.ctx.fillText(`${this.score}`, this.scoreCanvas.width * .05, this.scoreCanvas.height * .25);
         
-        this.ctx.fillText(`Combo`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .6);
-        this.ctx.fillText(`${this.comboCounter}`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .7);
+        // this.ctx.fillText(`Combo`, this.scoreCanvas.width * .03, this.scoreCanvas.height * .6);
+        this.ctx.font = '40px Arial'
+        this.ctx.textAlign = 'center'
+        this.ctx.fillText(`${this.comboCounter}`, this.scoreCanvas.width * .66, this.scoreCanvas.height * .9);
     }
 }
 
