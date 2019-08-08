@@ -27,11 +27,11 @@ class Note {
     }
 
     perfect() {
-        return this.pos.y >= this.cvs.height * .84 && this.pos.y <= this.cvs.height * .94;
+        return this.pos.y >= this.cvs.height * .86 && this.pos.y <= this.cvs.height * .97;
     }
 
     great() {
-        return this.pos.y >= this.cvs.height * .80 && this.pos.y <= this.cvs.height * .98;
+        return this.pos.y >= this.cvs.height * .82 && this.pos.y <= this.cvs.height * .95;
     }
 
 }
