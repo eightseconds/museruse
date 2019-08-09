@@ -60,7 +60,7 @@
 .background {
   overflow-y: hidden;
   height: 100vh;
-  width: 220vh;
+  width: 100vw;
 }
 
 
