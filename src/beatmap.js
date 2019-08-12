@@ -30,7 +30,7 @@ class BeatMap {
         this.addNotes = this.addNotes.bind(this);
         this.keyHit = this.keyHit.bind(this);
         this.scoreCanvas = document.getElementById("outer");
-        this.scoreCanvas.height = 500
+        this.scoreCanvas.height = canvas.height / 1.666
         this.ctx = this.scoreCanvas.getContext("2d");
 
         this.width = canvas.width / 2

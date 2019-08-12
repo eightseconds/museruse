@@ -22,12 +22,12 @@ class Game {
 
     init() {
         const offset = 70;
-        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 , this.cvs.height - 80, COLORS['RED'], 'S'));
-        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + offset, this.cvs.height - 80, COLORS['BLUE'], 'D'));
-        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 2), this.cvs.height - 80, COLORS['YELLOW'], 'F'));
-        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 3), this.cvs.height - 80, COLORS['YELLOW'], 'J'));
-        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 4), this.cvs.height - 80, COLORS['BLUE'], 'K'));
-        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 5), this.cvs.height - 80, COLORS['RED'], 'L'));
+        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 , this.cvs.height - this.cvs.height / 10.4, COLORS['RED'], 'S'));
+        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + offset, this.cvs.height - this.cvs.height / 10.4, COLORS['BLUE'], 'D'));
+        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 2), this.cvs.height - this.cvs.height / 10.4, COLORS['YELLOW'], 'F'));
+        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 3), this.cvs.height - this.cvs.height / 10.4, COLORS['YELLOW'], 'J'));
+        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 4), this.cvs.height - this.cvs.height / 10.4, COLORS['BLUE'], 'K'));
+        this.keys.push(new Key(game, this.cvs.width / 2 - 70 * 3 + (offset * 5), this.cvs.height - this.cvs.height / 10.4, COLORS['RED'], 'L'));
         this.draw()
         this.keys[0].trackInput();  
     }

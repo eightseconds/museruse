@@ -125,7 +125,7 @@ class Key {
         this.ctx.fillRect(this.pos.x, this.pos.y, this.w, this.h);
         this.ctx.font = '15px Arial'
         this.ctx.fillStyle = "black"
-        this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + 40)
+        this.ctx.fillText(this.letter, this.pos.x + 30, this.pos.y + this.pos.y / 16.5)
 
 
         this.ctx.strokeStyle = "#b3b3b3"
