@@ -6,7 +6,7 @@ class Column {
     constructor(col) {
         this.col = col;
         this.cvs = document.getElementById(`${this.col}`);
-        this.cvs.height = window.innerHeight
+        this.cvs.height = (window.innerHeight * .8)
         this.ctx = this.cvs.getContext("2d");
         this.notes = [];
 
